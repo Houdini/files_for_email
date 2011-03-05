@@ -1,0 +1,10 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.idea
+.sass-cache
+*.swp
+*~
+config/application.yml
+config/database.yml

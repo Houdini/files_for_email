@@ -1,0 +1,71 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset"
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base"
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint"
+
+// Combine the partials into a single screen stylesheet.
+@import "partials/page"
+@import "partials/form"
+$blueprint_grid_columns : 9
+$blueprint_grid_width : 80px
+@import "partials/two_col"
+
++blueprint
+
+
+
+.content
+  width: 1000px
+  margin: 0 auto
+  textarea
+    width: 250px
+    height: 200px
+  .field
+    input
+      width: 250px
+  .menu
+    margin-bottom: 20px
+#sidebar
+  border-right: 1px dotted #ccc
+  padding-right: 10px
+  h4
+    margin-bottom: 0
+  .helper
+    color: gray
+    margin-bottom: 20px
+    font-size: 95%
+  .notice
+    h3
+      color: green
+    .helper
+      color: green
+  #error_explanation
+    h2
+      color: red
+
+
+#content
+  h2
+    margin-bottom: 0
+  .element
+    margin-left: 20px
+    margin-bottom: 10px
+    border-bottom: 1px dotted #ccc
+    h2
+      font-size: 1.5em
+    .helper
+.footer-wrapper
+  clear: both
+  padding-top: 40px
+  .footer
+    padding-top: 10px
+    width: 100%
+    height: 50px
+    border-top: 1px dotted black
+    .content
+      width: 1000px
+      margin: 0 auto

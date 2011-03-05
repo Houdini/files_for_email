@@ -1,0 +1,29 @@
+<%= link_to 'New Data file', new_admin_data_file_path %>
+
+<h1>Listing data_files</h1>
+
+<table>
+  <tr>
+    <th>Ru title</th>
+    <th>En title</th>
+    <th>Ru description</th>
+    <th>En description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @data_files.each do |data_file| %>
+  <tr>
+    <td><%= data_file.ru_title %></td>
+    <td><%= data_file.en_title %></td>
+    <td><%= data_file.ru_description %></td>
+    <td><%= data_file.en_description %></td>
+    <td><%= link_to 'Show', [:admin, data_file] %></td>
+    <td><%= link_to 'Edit', edit_admin_data_file_path(data_file) %></td>
+    <td><%= link_to 'Destroy', [:admin, data_file], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+

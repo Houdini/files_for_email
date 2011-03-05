@@ -1,0 +1,15 @@
+development:
+  host: "http://localhost:3000"
+  notify_emails: "admin_email@gmail.com"
+  notify_subject: "Уведомление о новом запросе"
+  mail:
+    from: "user@gmail.com"
+    address: "smtp.gmail.com"
+    port: 587
+    domain: "smtp.gmail.com"
+    user_name: "user@gmail.com"
+    password: "secret"
+    authentication: "plain"
+    enable_starttls_auto: true
+production:
+  host: ""

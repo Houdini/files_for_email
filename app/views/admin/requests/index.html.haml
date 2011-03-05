@@ -1,0 +1,14 @@
+%h1 Запросы
+%table
+  %tr
+    %th
+      Эл. почта
+    %th
+      Сообщение
+  - for request in @requests
+    %tr(valign="top")
+      %td
+        = request.email
+      %td
+        = request.body
+

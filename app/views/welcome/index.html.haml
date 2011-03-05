@@ -1,0 +1,45 @@
+.menu
+  - if I18n.locale == :ru
+    RU
+    = link_to 'EN', root_url(:hl => :en)
+  - if I18n.locale == :en
+    = link_to 'RU', root_url
+    EN
+
+
+%h1= t :title
+
+.two-col
+  #sidebar
+    - if flash.has_key? :notice
+      .notice
+        %h3= flash[:notice]
+        .helper= t :request_create_helper
+
+    - else
+      %h4= t :request_title
+      .helper= t :request_helper
+      = form_for @request do |f|
+        - if @request.errors.any?
+          #error_explanation
+            %h2
+              = pluralize @request.errors.count, "error"
+              prohibited this request from being saved:
+            %ul
+              - @request.errors.full_messages.each do |msg|
+                %li= msg
+        = hidden_field_tag :hl, I18n.locale
+        .field
+          = f.label :email, t(:email)
+          %br
+          = f.text_field :email
+        .field
+          = f.text_area :body
+        .actions
+          = f.submit t(:send_request)
+  #content
+    %h2= t :data_title
+    - @files.each do |file|
+      .element
+        %h2= file.title
+        .helper= file.description

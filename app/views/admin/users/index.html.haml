@@ -1,0 +1,10 @@
+= link_to 'Добавить пользователя', new_admin_user_path
+%h1 Пользователи
+%table
+  %tr
+    %th Эл. почта
+    %th
+  - for user in @users
+    %tr
+      %td= user.email
+      %td= link_to 'Удалить', [:admin, user], :confirm => "Sure?", :method => :delete

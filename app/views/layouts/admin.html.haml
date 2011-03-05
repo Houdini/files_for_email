@@ -1,0 +1,23 @@
+!!!Strict
+%html
+  %head
+    = stylesheet_link_tag 'admin.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'print.css', :media => 'print'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+    %title Страница администратора
+    = csrf_meta_tag
+  %body
+    .menu
+      %ul
+        %li= link_to 'Статистика', admin_root_path
+        %li= link_to 'Список файлов', admin_data_files_path
+        %li= link_to 'Запросы', admin_requests_path
+        %li= link_to 'Пользователи', admin_users_path
+        %li
+          |
+        %li= current_user.email
+        %li= link_to 'Выйти', destroy_user_session_path
+    .content
+      = yield
+    = javascript_include_tag :defaults

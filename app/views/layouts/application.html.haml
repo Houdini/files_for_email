@@ -1,0 +1,16 @@
+!!!Strict
+%html
+  %head
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'print.css', :media => 'print'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+    %title INTEGRAL-REV2 Science Window Data Catalog
+    = csrf_meta_tag
+  %body.bp
+    .content= yield
+    .footer-wrapper
+      .footer
+        .content
+          :plain
+            Made in <a href="http://code-for-life.com">Code for life</a>

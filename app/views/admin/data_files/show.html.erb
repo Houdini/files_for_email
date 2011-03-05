@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ru title:</b>
+  <%= @data_file.ru_title %>
+</p>
+
+<p>
+  <b>En title:</b>
+  <%= @data_file.en_title %>
+</p>
+
+<p>
+  <b>Ru description:</b>
+  <%= @data_file.ru_description %>
+</p>
+
+<p>
+  <b>En description:</b>
+  <%= @data_file.en_description %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_data_file_path(@data_file) %> |
+<%= link_to 'Back', admin_data_files_path %>
